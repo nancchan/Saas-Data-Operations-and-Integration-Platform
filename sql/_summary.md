@@ -20,4 +20,4 @@ These skills are used in SaaS companies to:
 
 ## Key Takeaway
 
-SQL is not just querying data — it is a core tool for troubleshooting and business reporting in SaaS systems.
+SQL is not just querying data — it is a core tool for troubleshooting and business reporting in SaaS systems
