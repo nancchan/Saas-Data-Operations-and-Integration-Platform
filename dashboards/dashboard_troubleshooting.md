@@ -51,3 +51,24 @@ Checks:
 Dashboard → CRM → Database → API
 
 Trace the issue upstream until the source of the discrepancy is identified.
+
+## Root Cause Isolation Flow
+
+When a dashboard issue occurs:
+
+1. Confirm dashboard data mismatch (what is wrong?)
+2. Check CRM data (is source correct?)
+3. Validate database records (is data stored correctly?)
+4. Verify API ingestion (did data flow correctly?)
+5. Check dashboard query logic (is transformation correct?)
+
+---
+
+## Key Principle
+
+Dashboard issues are almost never dashboard issues.
+They are usually caused by upstream failures in:
+- API ingestion
+- Database storage
+- CRM synchronization
+- Data transformation layer
