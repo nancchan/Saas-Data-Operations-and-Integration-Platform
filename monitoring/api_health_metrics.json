@@ -1,0 +1,13 @@
+{
+  "service": "customer-api",
+  "availability": "99.95%",
+  "avg_response_ms": 185,
+  "p95_response_ms": 420,
+  "error_rate": "1.2%",
+  "requests_last_24h": 15420,
+  "top_errors": [
+    "422 Invalid Email Format",
+    "401 Unauthorized",
+    "400 Missing Required Field"
+  ]
+}
