@@ -1,91 +1,122 @@
-# SaaS Data Operations & Integration Platform
+SaaS Data Operations & Integration Platform
 
-## Overview
-This project simulates a real SaaS backend system showing how customer data flows from a user-facing application through an API layer, into a database, and then synchronizes with a CRM and dashboard system.
+⸻
 
-It is designed to replicate real-world Technical Support Engineer and Integration Engineer workflows.
+Overview
 
----
+This project simulates a SaaS backend system showing how customer data flows through a real production-style pipeline:
 
-## System Architecture
+API → Database → CRM → Dashboard
 
-User → API → Database → CRM → Dashboard
+It demonstrates real-world Technical Support and Integration Engineering workflows including data validation, system debugging, and incident resolution.
 
----
+⸻
 
-## Core Modules
+System Architecture
 
-### API Layer
-- HTTP methods (GET, POST, PUT, DELETE)
-- JSON payload handling
-- Validation and error handling
+User → API Layer → Database → CRM System → Dashboard
 
-### Database Layer
-- SQL queries for validation
-- Duplicate detection
-- Data integrity checks
+Each layer is responsible for validating, transforming, and reporting customer data across the system.
 
-### CRM Layer
-- Salesforce-style objects:
-  - Leads
-  - Contacts
-  - Accounts
-  - Opportunities
-- Field mapping between systems
+⸻
 
-### Dashboard Layer
-- Business reporting layer
-- Aggregated metrics from CRM + database
+Core Components
 
----
+API Layer
 
-## Incident Management
+* REST API (GET, POST, PUT, DELETE)
+* JSON request/response handling
+* Input validation and error handling (400 / 422 errors)
 
-The project includes SEV-2 incident reports:
+⸻
 
-- CRM sync failure due to missing email field
-- Duplicate customer creation due to missing idempotency
+SQL Layer
+
+* Data validation and cleanup
+* Duplicate detection
+* JOIN operations for cross-table analysis
+* Aggregation for reporting (COUNT, GROUP BY)
+* Root cause analysis support
+
+⸻
+
+CRM Integration Layer
+
+* Salesforce-style customer model
+* Field mapping between database and CRM
+* Sync failure handling and retry scenarios
+
+⸻
+
+Dashboard Layer
+
+* Aggregated business reporting
+* Data visualization logic
+* Troubleshooting of missing or incorrect metrics
+
+⸻
+
+Incident Management
+
+This project includes SEV-2 production-style incidents:
+
+* CRM sync failure due to missing email field
+* Duplicate customer creation due to API retry logic
 
 Each incident includes:
-- Impact
-- Root cause
-- Resolution
-- Prevention steps
 
----
+* Root cause analysis (RCA)
+* Impact assessment
+* Resolution steps
+* Prevention strategy
 
-## Troubleshooting Approach
+⸻
 
-1. Reproduce issue in API (Postman)
+Troubleshooting Flow
+
+When issues occur:
+
+API → Database → CRM → Dashboard
+
+1. Validate API request logs
 2. Check database records (SQL)
-3. Verify CRM sync status
-4. Inspect dashboard logic
-5. Identify root cause and document RCA
+3. Inspect CRM sync status
+4. Verify dashboard aggregation logic
+5. Identify root cause and fix upstream
 
----
+⸻
 
-## Tools & Technologies Simulated
+Security Model
 
-- APIs (REST concepts)
-- JSON
-- SQL
-- CRM systems (Salesforce model)
-- Postman (API testing)
-- Incident management workflows
+* API authentication (API keys, tokens)
+* Authorization (role-based access control)
+* Roles: Admin, Manager, User
+* Handles 401 (Unauthorized) and 403 (Forbidden) errors
 
----
+⸻
 
-## Key Skills Demonstrated
+Tools & Technologies
 
-- API troubleshooting
-- Data validation
-- CRM integration debugging
-- Root cause analysis (RCA)
-- Field mapping
-- System design thinking
+* REST APIs
+* SQL (PostgreSQL-style queries)
+* Postman (API testing)
+* JSON
+* CRM systems (Salesforce model)
+* Incident management workflows
 
----
+⸻
 
-## Author Note
+Key Skills Demonstrated
 
-This project simulates real SaaS support engineering workflows across multiple systems including API, database, CRM, and analytics layers.
+* API debugging and troubleshooting
+* SQL querying and data validation
+* CRM integration analysis
+* Root cause analysis (RCA)
+* System design thinking
+* Cross-system debugging (API → DB → CRM → Dashboard)
+
+⸻
+
+Summary
+
+This project simulates real SaaS production environments where data flows across multiple systems, and engineers must debug failures across API, database, CRM, and reporting layers.
