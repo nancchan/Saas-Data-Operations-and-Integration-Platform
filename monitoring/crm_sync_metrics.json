@@ -1,0 +1,6 @@
+{
+  "sync_success_rate": "96%",
+  "sync_failure_rate": "4%",
+  "top_failure_reason": "Missing email",
+  "failed_records": 32
+}
